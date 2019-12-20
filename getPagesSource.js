@@ -30,6 +30,13 @@ function DOMtoString(document_root) {
             ids.push(desc)
         }
     })
+    $("div", context).each(function(){
+        let desc = $(this).attr("exam")
+        if (desc) {
+            desc = JSON.parse(desc)
+            ids.push(desc.name)
+        }
+    })
     console.log(ids);
     // return $('p', $(html).context) 
     return JSON.stringify(ids,null,2);
